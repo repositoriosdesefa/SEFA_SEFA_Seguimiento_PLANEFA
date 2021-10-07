@@ -1,7 +1,7 @@
-# SEFA: Oficios y correos de seguimiento PLANEFA
-El proyecto Oficios de seguimiento PLANEFA cumplió con el objetivo de automatizar los documentos generados por la SEFA y ODES, a fin de dar seguimiento al cumplimiento de la presentación del PLANEFA y Reportes Trimestrales de la EFA.
+# SEFA: Oficios y correos de seguimiento del PLANEFA
+El proyecto denominado oficios de seguimiento del Plan Anual de Fiscalización Ambiental (PLANEFA) cumple con el objetivo de automatizar los documentos generados por la Subdirección de Seguimiento de Entidades de Fiscalización Ambiental (SEFA) y Oficinas Desconcentradas (ODES), a fin de dar seguimiento al cumplimiento de la presentación del PLANEFA y Reportes Trimestrales de la EFA.
 
-Al finalizar el proyecto se elaboró un script de automatización y los archivos correspondientes a las plantillas en RMarkdown para la generación de cada tipo de documento, los cuales son: 
+Para la ejecución del proyecto, se elaboró un script de automatización y archivos correspondientes a las plantillas en RMarkdown para la generación de cada tipo de documento, los cuales son los siguientes: 
 1. Oficio recordatorio
 2. Oficio de exhortación
 3. Oficio a OCI.
