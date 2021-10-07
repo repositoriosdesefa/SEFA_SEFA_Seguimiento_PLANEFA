@@ -1,5 +1,5 @@
 ####################################################################-
-############  Generaci?n masiva de oficios automatizados  ###########-
+############  Generación masiva de oficios automatizados  ###########-
 ############################# By LE ################################-
 
 # Parámetros Locales
@@ -157,7 +157,7 @@ auto_lec_rep <- function(tipo, oficina,
                                          efa_n))
 }
 
-# II.2 Funcion robustecida
+# II.2 Funcion robustecida ----
 R_auto_lec_rep <- function(tipo, oficina,
                            ht, num, lugar, nombre, 
                            efa, defa, prefa, direfa,
@@ -186,7 +186,7 @@ INSUMOS <- RT_2_INSUMOS %>%
   filter(TIPO_EXHORTACION=="Tipo 1" | TIPO_EXHORTACION=="Tipo 2")  %>%
   arrange(OD_COMPETENTE, EFA_5)
 
-# III.2 Generación de documentos
+# III.2 Generación de documentos ----
 pwalk(list(INSUMOS$TIPO_EXHORTACION,
            INSUMOS$OD_COMPETENTE,
            INSUMOS$HT_1,
