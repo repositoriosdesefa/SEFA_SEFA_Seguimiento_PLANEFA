@@ -11,15 +11,14 @@ Al finalizar el proyecto se elaboró un script de automatización y los archivos
 - Automatizar_RT_OCI.R : Script en R para la automatización de oficios a OCI.
 - Recordatorio_Planefa_Simplificado.Rmd : Archivo en RMarkdown para la generación de oficios recordatorios en PDF. 
 - RT_Ex_Tipo_1.Rmd : Archivo en RMarkdown para la generación de oficios exhortación tipo 1 en Word. 
-- plantilla_rt_exh_1 : Plantilla en Word para la generación de documentos.
 - RT_Ex_Tipo_2.Rmd : Archivo en RMarkdown para la generación de oficios exhortación tipo 2 en Word.
 - plantilla_rt_exh_2 : Plantilla en Word para la generación de documentos.
-- RT_Ex_OCI.Rmd : Archivo en RMarkdown para la generación de oficios a OCI en Word.
-- plantilla_rt_OCI : Plantilla en Word para la generación de documentos.
 - Peru.png : Archivos necesarios para la generación del documento.
-- Rlogo.png : Archivos necesarios para la generación del documento.
 - Carpeta Imágenes: Galería de imágenes con los productos
-
+- Carpeta Plantillas:
+    - plantilla_rt_exh_1 : Plantilla en Word para la generación de documentos.
+    - plantilla_rt_exh_2 : Plantilla en Word para la generación de documentos.
+    - plantilla_rt_exh_2 : Plantilla en Word para la generación de documentos.
 
 # Observaciones
 - Se eliminó la información sensible relacionada a ID de Google Sheets, rutas locales y objetos con accesos.
