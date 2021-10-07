@@ -1,0 +1,107 @@
+---
+params:
+  HT_1: "XXXX-XXX-XXXXXX"
+  N_OFICIO_2: "OFICIO N° XXXX-XXXX-XXXX/XXXX-XXXX"
+  LUGAR_3: "Lima"
+  DESTINATARIO_4: "Alcalde/sa"
+  EFA_5: "MUNICIPALIDAD PROVINCIAL XXXXX"
+  DPTO_EFA_6: "LIMA"
+  PROV_EFA_7: "LIMA"
+  DIR_EFA_8: "Jr. Lima XX, Cercado de Lima"
+  OCI_9:  "MUNICIPALIDAD PROVINCIAL XXXXX"
+  DPTO_OCI_10: "LIMA"
+  PROV_OCI_11: "LIMA"
+  DIR_OCI_12: "Jr. Lima XX, Cercado de Lima"
+  FIRMANTE_13: "[Firma SIGED]"
+  ADICIONAL_14: "[primer/segundo/primer y segundo]"
+  ADICIONAL_15: "OFICIO CIRCULAR N° XXXX-XXXX-XXXX/XXXX-XXXX"
+  ADICIONAL_16: "Director"
+  ADICIONAL_17:
+  ADICIONAL_18:
+output: 
+  word_document:
+    reference_docx: "plantilla_rt_oci.docx"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# I. Librerías y parámetros ----
+
+# I.1 Librerías ----
+#install.packages("lubridate")
+library(lubridate)
+#install.packages("stringr")
+library(stringr)
+
+# Mes
+Mes_actual <- str_to_lower(month(now(), 
+                                 label=TRUE, abbr = FALSE))
+
+# I.2 Parámetros ----
+HT <- params$HT_1 
+NUM_OFICIO <- params$N_OFICIO_2
+LUGAR <- params$LUGAR_3
+DESTINATARIO <- params$DESTINATARIO_4
+EFA <- params$EFA_5 
+DPTO_EFA <- params$DPTO_EFA_6
+PROV_EFA <- params$PROV_EFA_7
+DIR_EFA <- params$DIR_EFA_8
+OCI <- params$OCI_9 
+DPTO_OCI <- params$DPTO_OCI_10
+PROV_OCI <- params$PROV_OCI_11
+DIR_OCI <- params$DIR_OCI_12
+FIRMA <- params$FIRMANTE_13
+# Exhortación de trimestre
+AUX_1 <- params$ADICIONAL_14
+# Contacto
+AUX_2 <- params$ADICIONAL_15
+# Oficio de referencia
+AUX_3 <- params$ADICIONAL_16
+
+
+```
+
+###### `r HT[[1]]`
+
+### `r LUGAR[[1]]`, `r day(now())` de `r Mes_actual[[1]]` de `r year(now())`
+
+# \${numeroDocumento}
+
+### Sr/a
+
+## Jefe/a del Órgano de Control Institucional
+
+### `r OCI[[1]]`
+
+### `r DIR_OCI[[1]]`
+
+#### [`r DPTO_OCI[[1]]`]{.ul}.-
+
+|            |     |                                                                                                                                                                                             |
+|------------|-----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Asunto     | :   | [**Incumplimiento en el registro del reporte correspondiente al `r AUX_1[[1]]` trimestre del año 2021, en el marco del Plan Anual de Evaluación y Fiscalización Ambiental (Planefa)**]{.ul} |
+| Referencia | :   | Resolución de Consejo Directivo N° 004-2019-OEFA/CD                                                                                                                                         |
+|            |     | **`r AUX_2[[1]]`**                                                                                                                                                                          |
+
+De mi mayor consideración:
+
+Tengo el agrado de dirigirme a usted para saludarle cordialmente y, al mismo tiempo, informarle que el Organismo de Evaluación y Fiscalización Ambiental (OEFA) en su calidad de ente rector del Sistema Nacional de Evaluación y Fiscalización Ambiental (Sinefa), viene realizando el seguimiento a la **`r EFA[[1]]`**, a fin de verificar el cumplimiento del registro de los reportes de ejecución correspondientes a las actividades programadas para el `r AUX_1[[1]]` trimestre del 2021 en el aplicativo Planefa, de conformidad con lo establecido en los "Lineamientos para la formulación, aprobación, seguimiento y evaluación del cumplimiento del Planefa".
+
+Cabe precisar que, vencido el plazo otorgado, y de la revisión del aplicativo informático disponible en el portal institucional del OEFA, a la fecha del presente documento, **se verificó que la citada entidad no cumplió con registrar los reportes de ejecución correspondientes a las actividades programadas para el `r AUX_1[[1]]` trimestre del 2021**. En ese sentido, en atención a lo establecido en el Artículo 11° de la Ley N° 29325, Ley del Sistema Nacional de Evaluación y Fiscalización Ambiental, modificada por la Ley N° 30011, se remite a su despacho la presente información a fin de que actúe en el marco de sus competencias.
+
+Sin otro en particular, hago propicia la ocasión para reiterarle los sentimientos de mi especial consideración.
+
+Atentamente,
+
+|     |     |     |
+|-----|-----|-----|
+|     |     |     |
+|     |     |     |
+|     |     |     |
+|     |     |     |
+|     |     |     |
+|     |     |     |
+
+**`r FIRMA[[1]]`**
+
+##### - Se adjunta la constancia de depósito de la notificación electrónica del oficio de exhortación: `r AUX_2[[1]]`

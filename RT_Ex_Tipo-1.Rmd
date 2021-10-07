@@ -1,0 +1,105 @@
+---
+params:
+  HT_1: "XXXX-XXX-XXXXXX"
+  N_OFICIO_2: "OFICIO N° XXXX-XXXX-XXXX/XXXX-XXXX"
+  LUGAR_3: "Lima"
+  DESTINATARIO_4: "Alcalde/sa"
+  EFA_5: "MUNICIPALIDAD PROVINCIAL XXXXX"
+  DPTO_EFA_6: "LIMA"
+  PROV_EFA_7: "LIMA"
+  DIR_EFA_8: "Jr. Lima XX, Cercado de Lima"
+  OCI_9:  "MUNICIPALIDAD PROVINCIAL XXXXX"
+  DPTO_OCI_10: "LIMA"
+  PROV_OCI_11: "LIMA"
+  DIR_OCI_12: "Jr. Lima XX, Cercado de Lima"
+  FIRMANTE_13: "[Firma SIGED]"
+  ADICIONAL_14: "[primer/segundo/primer y segundo]"
+  ADICIONAL_15: "[contacto]"
+  ADICIONAL_16:
+  ADICIONAL_17:
+  ADICIONAL_18:
+output: 
+  word_document:
+    reference_docx: "plantilla_rt_exh_1.docx"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# I. Librerías y parámetros ----
+
+# I.1 Librerías ----
+#install.packages("lubridate")
+library(lubridate)
+#install.packages("stringr")
+library(stringr)
+
+# Mes
+Mes_actual <- str_to_lower(month(now(), 
+                                 label=TRUE, abbr = FALSE))
+
+# I.2 Parámetros ----
+HT <- params$HT_1 
+NUM_OFICIO <- params$N_OFICIO_2
+LUGAR <- params$LUGAR_3
+DESTINATARIO <- params$DESTINATARIO_4
+EFA <- params$EFA_5 
+DPTO_EFA <- params$DPTO_EFA_6
+PROV_EFA <- params$PROV_EFA_7
+DIR_EFA <- params$DIR_EFA_8
+OCI <- params$OCI_9 
+DPTO_OCI <- params$DPTO_OCI_10
+PROV_OCI <- params$PROV_OCI_11
+DIR_OCI <- params$DIR_OCI_12
+FIRMA <- params$FIRMANTE_13
+AUX_1 <- params$ADICIONAL_14
+AUX_2 <- params$ADICIONAL_15
+
+
+```
+
+###### `r HT[[1]]`
+
+### `r LUGAR[[1]]`, `r day(now())` de `r Mes_actual[[1]]` de `r year(now())`
+
+# \${numeroDocumento}
+
+### `r DESTINATARIO[[1]]`
+
+## `r EFA[[1]]`
+
+#### [`r PROV_EFA[[1]]`, `r DPTO_EFA[[1]]`]{.ul}.-
+
+## Cc. ÓRGANO DE CONTROL INSTITUCIONAL
+
+### `r OCI[[1]]`
+
+### `r DIR_OCI[[1]]`
+
+#### [`r DPTO_OCI[[1]]`]{.ul}.-
+
+|        |     |                                                                                                                                                                                                                                 |
+|--------|-----|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Asunto | :   | **Se exhorta a cumplir con registrar las actividades de fiscalización ambiental realizadas durante el `r AUX_1[[1]]` trimestre del año 2021, en el marco del Plan Anual de Evaluación y Fiscalización Ambiental (Planefa)**$^1$ |
+
+De mi mayor consideración:
+
+Tengo el agrado de dirigirme a ustedes para saludarle cordialmente y, al mismo tiempo, informarle que el Organismo de Evaluación y Fiscalización Ambiental (OEFA) en su calidad de ente rector del Sistema Nacional de Evaluación y Fiscalización Ambiental (Sinefa), viene realizando el seguimiento de las Entidades de Fiscalización Ambiental (EFA) a nivel nacional, a fin de verificar el cumplimiento del registro de las actividades de fiscalización ambiental realizadas durante el `r AUX_1[[1]]` trimestre del 2021 en el aplicativo Planefa, de conformidad con lo establecido en los "Lineamientos para la formulación, aprobación, seguimiento y evaluación del cumplimiento del Planefa"$^2$.
+
+Al respecto, le informamos que de acuerdo a lo verificado en el aplicativo, **su entidad no ha cumplido con registrar las actividades de fiscalización ambiental realizadas durante el `r AUX_1[[1]]` trimestre del presente año 2021**; por lo que se les exhorta a cumplir con ingresar dicha información de acuerdo a lo dispuesto en los "Lineamientos para la formulación, aprobación, seguimiento y evaluación del cumplimiento del Planefa", en un plazo máximo de cinco (5) días.
+
+Cabe recordar que el incumplimiento de las funciones de fiscalización ambiental acarrea responsabilidad funcional y será comunicado al órgano competente del Sistema Nacional de Control$^3$.
+
+En caso tenga alguna consulta o requiera asistencia técnica, puede contactarse `r AUX_2[[1]]`.
+
+Sin otro en particular, hago propicia la ocasión para reiterarle los sentimientos de mi especial consideración.
+
+Atentamente,
+
+|     |     |     |
+|-----|-----|-----|
+|     |     |     |
+|     |     |     |
+|     |     |     |
+|     |     |     |
+
+**`r FIRMA[[1]]`**
